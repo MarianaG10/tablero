@@ -6,7 +6,7 @@ st.title('Reconocimiento dibujos a mano')
 
 
 stroke_width = st.slider('Selecciona el ancho de línea', 1, 30, 15)
-stroke_color = st.color_picker("Pick A Color", "#87CEEB")
+stroke_color = st.color_picker("Pick A Color", "#8B0000")
 bg_color = '#000000'
 
 drawing_mode = st.sidebar.selectbox(
