@@ -5,14 +5,13 @@ st.set_page_config(page_title='Tablero', layout='wide')
 st.title('Reconocimiento dibujos a mano')
 
 
-drawing_mode = "freedraw"
 stroke_width = st.slider('Selecciona el ancho de línea', 1, 30, 15)
-stroke_color = st.color_picker("Pick A Color", "#00f900")
+stroke_color = st.color_picker("Pick A Color", "#87CEEB")
 bg_color = '#000000'
 
-option = st.selectbox(
-    "freedraw",
-    ("line", "rect", "circle", "transform", "polygon", "point"),
+drawing_mode = st.sidebar.selectbox(
+    "Drawing tool:",
+    ("freedraw", "line", "rect", "circle", "transform", "polygon",),
 )
 
 
@@ -21,7 +20,8 @@ canvas_result = st_canvas(
     stroke_width=stroke_width,
     stroke_color=stroke_color,
     background_color=bg_color,
-    height=200,
-    width=200,
+    drawing_mode=drawing_mode,
+    height=300,
+    width=1300,
     key="canvas",
 )
